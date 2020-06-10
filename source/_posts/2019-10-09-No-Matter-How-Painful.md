@@ -12,7 +12,7 @@ date: 2019-10-09
 
 <div id="dplayer-2019-10-09"></div>
 
-<style>#aplayer-2019-10-09{max-width:740px;}</style>
+<style>#dplayer-2019-10-09{max-width: 666px;}</style>
 <script>$(function(){var dp = new DPlayer({container: document.getElementById('dplayer-2019-10-09'),screenshot: false,video: {url:'https://9ken97.coding-pages.com/Fractures.mp4',pic:'https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191107010.jpg'}});})</script>
 
 -----
@@ -25,6 +25,4 @@ date: 2019-10-09
 
 国庆四号出门的吧，第一天杨梅坑，到较场尾住民宿，第二天起来看较场尾日出，再到大鹏古城，然后到官湖村，然后回了，是和 LJB 一起去的
 
-国庆前一个月左右感觉整个人好颓废啊，没怎么学习，现在开始要加油了呀，努力啊，小伙子，要多陪父母哦
-
-**—End—**
+国庆前一个月左右感觉整个人好颓废啊，没怎么学习，现在开始要加油了呀，努力啊，小伙子，要多陪父母哦。**—End—**
