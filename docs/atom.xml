@@ -73,11 +73,11 @@
   </entry>
   
   <entry>
-    <title>2019 我做了什么</title>
+    <title>2019年我做了什么</title>
     <link href="https://dolyw.com/2020/01/08/2020-01-08-2019-End/"/>
     <id>https://dolyw.com/2020/01/08/2020-01-08-2019-End/</id>
     <published>2020-01-07T16:00:00.000Z</published>
-    <updated>2020-06-10T10:01:37.362Z</updated>
+    <updated>2020-06-11T09:25:49.058Z</updated>
     
     <content type="html"><![CDATA[<div id="aplayer-2019"></div><p><style>#aplayer-2019{max-width:666px;}</style></p><script>$(function(){$.ajax({url:"https://api.i-meto.com/meting/api?server=netease&type=song&id=1365393542",success:function(e){var a=new APlayer({element:document.getElementById("aplayer-2019"),showlrc:3,theme:"#000080",music:e[0]});window.aplayers||(window.aplayers=[]),window.aplayers.push(a)}})})</script><hr><p><b>我希望成为那种，即使再孤单，生活再坎坷，不管天晴天阴，不管有无人爱，都会眷恋着夕阳和晨光，捕捉生活美好瞬间的人</b></p><p>不知不觉新的一年 <strong>2020</strong> 已经到来，我还没做好准备。看看别人的 <strong>2019</strong>，再看我的，完全是肥宅啊，都不知道写什么</p><p><strong>19</strong> 年不像 <strong>18</strong> 年一样，去了很多地方，就是上班，深圳市民中心，深圳湾，海岸城那些地方走走，好像五一都没出门，感觉没做什么一样，翻了一下<strong>豆瓣日记</strong>，其实也发生了很多事，搬家了，遇到新的朋友，公司旅游去东部华侨城，电脑加内存条，国庆四号出门的吧，第一天杨梅坑，到较场尾住民宿，第二天起来看较场尾日出，再到大鹏古城，然后到官湖村，然后回了，是和 LJB 一起去的，还有的就不太好贴到这来，想回忆下就翻下<strong>豆瓣日记</strong>，照片自己看图库就行</p><p>换了网络名称，换了域名；换了新的眼镜，依视路镜片，大框的，<strong>1842</strong> 大洋；换了新的手机，<strong>OnePlus 7 Pro</strong>，<strong>4499</strong> 大洋；参加腾讯云的技术沙龙，去新腾讯总部瞄了一眼，抽奖中了本书，后面把 <strong>OnePlus 3T</strong> 闲鱼回收了 <strong>305</strong> 大洋</p><ul><li><a href="https://life.dolyw.com/2019/05/11/2019-05-11-Toggle-Domain-Name/" target="_blank" rel="noopener">换个名字，换个域名，重新注册谷歌账号</a></li><li><a href="https://life.dolyw.com/2019/05/18/2019-05-18-OnePlus/" target="_blank" rel="noopener">参加OnePlus深圳POP-UP线下活动</a></li><li><a href="https://life.dolyw.com/2019/05/26/2019-05-26-Tencent/" target="_blank" rel="noopener">参加腾讯云的技术沙龙</a></li></ul>]]></content>
     
