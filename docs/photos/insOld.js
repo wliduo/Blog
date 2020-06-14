@@ -112,32 +112,75 @@
     };
     var render = function render(res) {
 
-      var myPicList = [];
-      var myPic = {};
-      for (var x = 0, picListlen = picList.length; x < picListlen; x++) {
-        var tempDate = picList[x].alt.slice(0, 6);
-        console.log(tempDate);
-      }
+      try {
+        var myPicList = [];
+        var myPic = {};
+        var myPicArr = {};
+        for (var x = 0, picListlen = picList.length; x < picListlen; x++) {
+          // 判断日期进行分组
+          var tempDate = picList[x].alt.slice(0, 6);
+
+          var myPicListTemp = myPicList.filter(function(item) {
+            return item.date == tempDate; 
+          })
+
+          // console.log(myPicListTemp);
+          if (myPicListTemp.length >= 1) {
+            myPicListTemp[0].arr.link.push(picList[x].src);
+            myPicListTemp[0].arr.src.push(picList[x].data);
+            myPicListTemp[0].arr.text.push(picList[x].alt);
+            myPicListTemp[0].arr.type.push("image");
+          } else {
+            myPic = {};
+            myPic.date = tempDate;
+            // 照片属性
+            myPicArr = {};
+            myPicArr.year = picList[x].alt.slice(0, 4);
+            myPicArr.month = picList[x].alt.slice(4, 6);
+            var linkList = [];
+            linkList.push(picList[x].src);
+            myPicArr.link = linkList;
+            var srcList = [];
+            srcList.push(picList[x].data);
+            myPicArr.src = srcList;
+            var textList = [];
+            textList.push(picList[x].alt);
+            myPicArr.text = textList;
+            var typeList = [];
+            typeList.push("image");
+            myPicArr.type = typeList;
+            // 赋值
+            myPic.arr = myPicArr;
+            myPicList.push(myPic);
+          }
+        }
+        // 合并
+        // res.list = myPicList.concat(res.list);
+      } catch (e) { console.log(e); }
 
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          // var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
-          // var src = 'http://litten.me/ins/' + data.link[i];
           var minSrc = data.link[i];
-          var src = data.link[i];
+          var src = data.src[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           // src += '.jpg';
 
-          liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+          /* liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                 <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-            </figure>';
+            </figure>'; */
+          liTmpl += '<figure class="thumb">\
+              <a href="' + minSrc + '" itemprop="contentUrl" data-type="' + type + '" data-target="' + src + '">\
+                <img data-type="' + type + '" data-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+              </a>\
+              <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+          </figure>';
         }
         ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
         <ul class="img-box-ul">' + liTmpl + '</ul>\
@@ -371,7 +414,8 @@
 
           linkEl = figureEl.children[0]; // 
 
-          size = linkEl.getAttribute('data-size').split('x');
+          // size = linkEl.getAttribute('data-size').split('x');
+          size = ["640", "640"];
           type = linkEl.getAttribute('data-type');
           target = linkEl.getAttribute('data-target');
           // create slide object

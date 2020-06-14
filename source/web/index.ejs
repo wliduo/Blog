@@ -5,7 +5,8 @@ title: "图片"
 noDate: "true"
 comments: "false"
 ---
-<link rel="stylesheet" href="./ins.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/photos/ins.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
 <div class="photos-btn-wrap">
 	<a class="photos-btn" href="/photos">日常</a>
 	<a class="photos-btn active" href="/web">图片</a>
@@ -13,19 +14,22 @@ comments: "false"
   <a class="photos-btn" target="_blank" href="https://char.dolyw.com/video">视频字符</a>
 </div>
 <div class="instagram itemscope">
-  <!-- <a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a> -->
   <a class="open-ins">图片正在加载中…</a>
 </div>
 <script src="https://cdn.jsdelivr.net/gh/wliduo/Mark@1.0/assets/lib/piclist.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
-  (function() {
+  var insType = "web";
+  var insDefaultNum = 3;
+  /* (function() {
     var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
+      var $script = document.createElement('script');
+      document.getElementsByTagName('body')[0].appendChild($script);
+      $script.setAttribute('src', path);
     }
     setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
+      loadScript('../photos/ins.js');
+    }, 0);
+  })() */
 </script>
+<script src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/photos/ins.js"></script>

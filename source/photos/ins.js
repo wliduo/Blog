@@ -1,3 +1,17 @@
+var loadjustifiedGallery = function loadjustifiedGallery(obj) {
+  // console.log(obj.parentNode);
+  $(obj.parentNode).hide();
+  // console.log(obj.name);
+  $("#" + obj.name).show();
+  $("#" + obj.name).justifiedGallery({
+    rowHeight: 180,
+    margins: 3,
+    captions: false
+  }).on('jg.complete', function (e) {
+
+  });
+};
+
 /******/
 (function(modules) { // webpackBootstrap
   /******/ // The module cache
@@ -110,35 +124,171 @@
         addMask($videoImg[i]);
       }
     };
+
+    // PC端返回false
+		var isMobile = function isMobile() {
+			var viewType = navigator.userAgent.toLowerCase();
+			// console.log(viewType);
+			return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
+    }
+
+    var myjustifiedGallery = function myjustifiedGallery(ulLen) {
+      var reJustifiedGallery = function reJustifiedGallery(index) {
+        if (index == ulLen) {
+          return;
+        }
+        $("#ulBtn" + index).hide();
+        $("#ulId" + index).show();
+        if (isMobile()) {
+          /* var j = 0;
+          for (var i = 0; i < ulLen; i++) {
+            $("#ulId" + i).justifiedGallery({
+              lastRow : 'nojustify',
+              margins : 3
+            }).on('jg.complete', function (e) {
+              j++;
+              if (j == ulLen) {
+                createVideoIncon();
+              }
+            });
+          } */
+          $("#ulId" + index).justifiedGallery({
+            margins: 3,
+            captions: false
+          }).on('jg.complete', function (e) {
+            setTimeout(function() {
+              reJustifiedGallery(index + 1);
+            }, 500);
+          });
+        } else {
+          /* var j = 0;
+          for (var i = 0; i < ulLen; i++) {
+            $("#ulId" + i).justifiedGallery({
+              rowHeight : 180,
+              lastRow : 'nojustify',
+              margins : 3
+            }).on('jg.complete', function (e) {
+              j++;
+              if (j == ulLen) {
+                createVideoIncon();
+              }
+            });
+          } */
+          $("#ulId" + index).justifiedGallery({
+            rowHeight: 180,
+            margins: 3,
+            captions: false
+          }).on('jg.complete', function (e) {
+            setTimeout(function() {
+              reJustifiedGallery(index + 1);
+            }, 500);
+          });
+        }
+      };
+      reJustifiedGallery(0);
+    };
+
     var render = function render(res) {
+      try {
+        var photoList = lifeList;
+        if (insType == "web") {
+          photoList = picList;
+        }
+        var myPhotoList = [];
+        var myPic = {};
+        var myPicArr = {};
+        for (var x = 0, photoListlen = photoList.length; x < photoListlen; x++) {
+          // 判断日期进行分组
+          var tempDate = photoList[x].alt.slice(0, 6);
+          var myPhotoListTemp = myPhotoList.filter(function(item) {
+            return item.date == tempDate; 
+          })
+          // console.log(myPhotoListTemp);
+          if (myPhotoListTemp.length >= 1) {
+            myPhotoListTemp[0].arr.link.push(photoList[x].src);
+            myPhotoListTemp[0].arr.src.push(photoList[x].data);
+            if (photoList[x].desc) {
+              myPhotoListTemp[0].arr.text.push(photoList[x].alt + ' - ' + photoList[x].desc);
+            } else {
+              myPhotoListTemp[0].arr.text.push(photoList[x].alt);
+            }
+            myPhotoListTemp[0].arr.type.push("image");
+          } else {
+            myPic = {};
+            myPic.date = tempDate;
+            // 照片属性
+            myPicArr = {};
+            myPicArr.year = photoList[x].alt.slice(0, 4);
+            myPicArr.month = photoList[x].alt.slice(4, 6);
+            var linkList = [];
+            linkList.push(photoList[x].src);
+            myPicArr.link = linkList;
+            var srcList = [];
+            srcList.push(photoList[x].data);
+            myPicArr.src = srcList;
+            var textList = [];
+            if (photoList[x].desc) {
+              textList.push(photoList[x].alt + ' - ' + photoList[x].desc);
+            } else {
+              textList.push(photoList[x].alt);
+            }
+            myPicArr.text = textList;
+            var typeList = [];
+            typeList.push("image");
+            myPicArr.type = typeList;
+            // 赋值
+            myPic.arr = myPicArr;
+            myPhotoList.push(myPic);
+          }
+        }
+        // console.log(myPhotoList);
+        if (insType == "web") {
+          // 数据调整，2019年3月调整到后面
+          myPhotoList.push(myPhotoList[2]);
+          myPhotoList.splice(2, 1);
+        }
+        // 数据倒序
+        myPhotoList.reverse();
+        // 合并
+        res.list = res.list.concat(myPhotoList);
+      } catch (e) { console.log(e); }
+
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
-        for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
-          var src = 'http://litten.me/ins/' + data.link[i];
-          var type = data.type[i];
-          var target = src + (type === 'video' ? '.mp4' : '.jpg');
-          src += '.jpg';
+        for (var i = 0, len = data.src.length; i < len; i++) {
+          // var minSrc = data.link[i];
+          var minSrc = data.src[i];
+          var src = data.src[i];
+          // var type = data.type[i];
+          var type = "image";
+          var target = type === 'video' ? minSrc : src;
+          // src += '.jpg';
+          var text = data.text[i];
 
-          liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+          /* liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                 <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-            </figure>';
+            </figure>'; */
+            liTmpl = liTmpl + '<div class="thumb"><a href="' + src + '" data-type="' + type + '" data-target="' + src + '">' + 
+            '<img data-type="' + type + '" data-src="' + src + '" data-target="' + src + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" title="' + text + '" alt="' + text + '" data-sub-html="' + text.slice(0, 8) + '"></a></div>';
         }
         ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
-        <ul class="img-box-ul">' + liTmpl + '</ul>\
+        <ul id="ulBtn' + j + '" class="img-box-ul"><a name="ulId' + j + '" class="article-more-link" href="javascript:;" onclick="loadjustifiedGallery(this)">展开</a></ul>\
+        <ul id="ulId' + j + '" class="img-box-ul" style="display:none;">' + liTmpl + '</ul>\
         </section>';
       }
-      document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
-      createVideoIncon();
+      /* document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>'; */
+      document.querySelector('.instagram').innerHTML = '<div class="photos">' + ulTmpl + '</div>';
+      // myjustifiedGallery(res.list.length);
+      myjustifiedGallery(insDefaultNum);
       _view2.default.init();
     };
 
-    var replacer = function replacer(str) {
+    /* var replacer = function replacer(str) {
       var arr = str.split("/");
       return "/assets/ins/" + arr[arr.length - 1];
     };
@@ -164,12 +314,16 @@
         }
       }
       render(imgObj);
-    };
+    }; */
 
     function loadData(success) {
       if (!searchData) {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', './ins.json?t=' + +new Date(), true);
+        if (insType == "web") {
+          xhr.open('GET', 'https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/web/ins.json?t=' + +new Date(), true);
+        } else {
+          xhr.open('GET', 'https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/photos/ins.json?t=' + +new Date(), true);
+        }
 
         xhr.onload = function() {
           if (this.status >= 200 && this.status < 300) {
@@ -194,7 +348,6 @@
     var Ins = {
       init: function init() {
         loadData(function(data) {
-          console.log(data);
           render(data);
         });
       }
@@ -362,9 +515,9 @@
 
           linkEl = figureEl.children[0]; // 
 
-          size = linkEl.getAttribute('data-size').split('x');
+          // size = linkEl.getAttribute('data-size').split('x');
+          size = ["640", "640"];
           type = linkEl.getAttribute('data-type');
-          target = linkEl.getAttribute('data-target');
           // create slide object
           item = {
             src: linkEl.getAttribute('href'),
@@ -376,6 +529,7 @@
             item.title = figureEl.children[1].innerHTML;
           }
 
+          target = linkEl.getAttribute('data-target');
           if (linkEl.children.length > 0) {
             item.msrc = linkEl.children[0].getAttribute('src');
             item.type = type;
@@ -405,9 +559,12 @@
 
         var eTarget = e.target || e.srcElement;
 
+        return;
+
         // find root element of slide
         var clickedListItem = closest(eTarget, function(el) {
-          return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
+          // return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
+          return el.className && el.className === 'thumb jg-entry entry-visible';
         });
 
         if (!clickedListItem) {
@@ -562,7 +719,7 @@
         gallery.listen('afterChange', changeHandle);
         gallery.listen('initialZoomOut', stopVideoHandle);
       };
-
+      
       // loop through all gallery elements and bind events
       var galleryElements = document.querySelectorAll(gallerySelector);
       for (var i = 0, l = galleryElements.length; i < l; i++) {
