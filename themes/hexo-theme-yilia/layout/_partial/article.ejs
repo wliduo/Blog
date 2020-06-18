@@ -8,7 +8,29 @@
         <% } %>
       </header>
     <% } %>
+
+    <style>
+      .post-gallery {max-width: 990px;display: table;table-layout: fixed;width: 100%;border-collapse: separate;}
+      .post-gallery-row {display: table-row;}
+      .post-gallery .post-gallery-img {display: table-cell;text-align: center;vertical-align: middle;border: none;padding-right:10px;}
+    </style>
+
     <div class="article-entry" itemprop="articleBody">
+
+      <% if (post.photos && post.photos.length) {%>
+        <div class="post-gallery">
+          <% for (var photo in post.photos){ %>
+            <% if (photo % 3 === 0) { %><div class="post-gallery-row"><% } %>
+              <a class="post-gallery-img">
+                <img style="width: 100%;max-width:666px" src="<%- url_for(post.photos[photo]) %>" data-action="zoom"/>
+              </a>
+            <% if (photo % 3 === 2) { %></div><% } %>
+          <% } %>
+  
+          <% if (post.photos.length % 3 > 0) { %></div><% } %>
+        </div>
+      <% } %>
+
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link) { %>

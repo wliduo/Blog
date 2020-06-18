@@ -27,6 +27,5 @@ date: 2018-10-13 15:18:18
 
 *From [时文博览](https://blog.csdn.net/dolyw/article/details/53322461)*
 
-![image text](https://dolyw.gitee.io/reader/Image/201810/normal/13005.png)
-
------
+<!-- ![image text](https://dolyw.gitee.io/reader/Image/201810/normal/13005.png) -->
+<img style="width:100%;max-width:666px" src="https://dolyw.gitee.io/reader/Image/201810/normal/13005.png" data-action="zoom">
