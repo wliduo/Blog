@@ -7,21 +7,53 @@ comments: "false"
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/photos/ins.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.7.2/dist/css/lightgallery.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.7.2/dist/css/lightgallery.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css">
+<style>
+.lg-outer .lg-thumb-outer {
+  background-color: rgba(0,0,0,.45);
+}
+</style>
 <div class="photos-btn-wrap">
 	<a class="photos-btn" href="/photos">日常</a>
 	<a class="photos-btn active" href="/web">图片</a>
   <a class="photos-btn" target="_blank" href="https://char.dolyw.com/pic">字符</a>
 </div>
 <div class="instagram itemscope">
-  <a class="open-ins">图片正在加载中…</a>
+  <a class="open-ins">
+    就怕一生碌碌无为，还安慰自己平凡可贵<br/><br/>
+    每天看着励志的语录却过着颓废的人生<br/><br/><br/>
+
+    如果不坚强，流泪给谁看<br/><br/><br/>
+
+    努力到无能为力，拼搏到感动自己<br/><br/>
+    这个世界上没有天才，只有不努力的笨蛋
+  </a>
 </div>
 <!-- <script src="https://cdn.jsdelivr.net/gh/wliduo/Mark@1.0/assets/lib/piclist.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.7.2/dist/js/lightgallery.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.7.2/dist/js/lightgallery.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-fullscreen.js@1.2.0/dist/lg-fullscreen.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/lg-autoplay@1.2.0/dist/lg-autoplay.min.js"></script> -->
 <script>
   var insType = "web";
   var insDefaultNum = 6;
+
+  // 取地址栏参数
+  function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+  }
+
+  var debug = getQueryString("debug");
+
   (function() {
     var loadScript = function(path) {
       var $script = document.createElement('script');
@@ -29,7 +61,11 @@ comments: "false"
       $script.setAttribute('src', path);
     }
     setTimeout(function() {
-      loadScript('../photos/ins.min.js');
+      if (debug) {
+        loadScript('../photos/ins.js');
+      } else {
+        loadScript('https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/photos/ins.js');
+      }
     }, 0);
   })()
 </script>
