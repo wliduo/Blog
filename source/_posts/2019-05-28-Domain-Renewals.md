@@ -2,8 +2,8 @@
 title: 域名续费三年，可恶的优惠券
 # description: 域名续费三年，可恶的优惠券...
 layout: post
-category: Life
-tags: Life
+category: 我的日记
+tags: 我的日记
 date: 2019-05-28
 photos:
 - https://img11.360buyimg.com/img/jfs/t1/38433/22/4832/346247/5ccb86daE74005af2/9521b174daaa38e8.jpg

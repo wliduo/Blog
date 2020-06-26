@@ -2,8 +2,8 @@
 title: 不管多么痛苦，都不要逃往轻松的一边
 # description: 国庆节就这样过去了，这个网站也一年了，只是兴趣随便弄来玩玩的，技术学习的东西都在笔记和Github上，这里主要是写写生活和记录一些文章吧...
 layout: post
-category: Life
-tags: Life
+category: 我的日记
+tags: 我的日记
 date: 2019-10-09
 # photos:
 # - https://img1.360buyimg.com/img/jfs/t1/56671/28/12886/333272/5d9a2dfaE23690469/7c5ca10053d0bf2f.jpg

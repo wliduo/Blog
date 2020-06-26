@@ -2,8 +2,8 @@
 title: 如果你不想工作了，就去这四个地方走走
 description: 微博上曾经有过这样一个征集：你现在最焦虑的问题是什么？
 layout: post
-category: Article
-tags: Article
+category: 不错的文章
+tags: 不错的文章
 date: 2019-04-21 14:20:18
 photos:
 - https://dolyw.gitee.io/reader/Image/201810/normal/10010.png

@@ -2,8 +2,8 @@
 title: 没想到我的一句「脸皮厚」，就火了
 description: 不知不觉又是一个双十一到了...
 layout: post
-category: Life
-tags: [Article, Life]
+category: 我的日记
+tags: [不错的文章, 我的日记]
 date: 2019-11-11
 photos:
 - https://img13.360buyimg.com/img/jfs/t27250/130/2210386407/346470/b293956f/5bfa9a77N4d1e5915.jpg

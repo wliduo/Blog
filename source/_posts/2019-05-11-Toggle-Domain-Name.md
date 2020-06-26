@@ -2,8 +2,8 @@
 title: 换个名字，换个域名，重新注册谷歌账号
 # description: 一直觉得wang926454这个名字太low太长，所以一直想改名字，选来选去，从eren到dodo到lido最后用了dolyw.....
 # layout: post
-category: Life
-tags: Life
+category: 我的日记
+tags: 我的日记
 date: 2019-05-11
 photos:
 - https://img14.360buyimg.com/img/jfs/t1/30199/30/1979/348009/5c64b4b6Eaef7d298/10d4d2f7d139deb7.jpg
