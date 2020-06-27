@@ -131,6 +131,9 @@ function loadjustifiedGallery(obj) {
           var minSrc = data.link[i];
           var src = data.src[i];
           var text = data.text[i];
+          if (text.slice(0, 1) == "-") {
+            continue;
+          }
           liTmpl = liTmpl + '<a href="' + src + '" target="_blank" data-sub-html="' + text + '">' + 
             '<img class="none-photoswipe-img" img-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" title="' + text + '" alt="' + text.slice(0, 8) + '"></a>';
         }
