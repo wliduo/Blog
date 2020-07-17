@@ -135,7 +135,7 @@ function loadjustifiedGallery(obj) {
             continue;
           }
           liTmpl = liTmpl + '<a href="' + src + '" target="_blank" data-sub-html="' + text + '">' + 
-            '<img class="none-photoswipe-img" img-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/docs/empty.png" title="' + text + '" alt="' + text.slice(0, 8) + '"></a>';
+            '<img class="none-photoswipe-img" img-src="' + minSrc + '" src="https://cdn.jsdelivr.net/gh/wliduo/Blog@master/source/empty.png" title="' + text + '" alt="' + text.slice(0, 8) + '"></a>';
         }
         ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
         <ul id="ulBtn' + j + '" class="img-box-ul"><button name="ulId' + j + '" class="article-more-link" onclick="loadjustifiedGallery(this)">展开</button></ul>\
