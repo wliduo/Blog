@@ -117,20 +117,22 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '文章'
-  friends: '链接'
+  friends: '地图'
   aboutme: '关于'
 
 friends:
+  笔记 - 技术笔记: https://note.dolyw.com
+  音乐 - 我的音乐台: https://res.dolyw.com
+  书签 - 我的书签: https://mark.dolyw.com
+  友链 - 友情链接: https://friend.dolyw.com
+  留言 - 我的留言板: https://msg.dolyw.com
   首页 - 我的首页: https://dolyw.com
   导航 - 整站地图: https://map.dolyw.com
-  笔记 - 技术笔记: https://note.dolyw.com
-  留言 - 我的留言板: https://msg.dolyw.com
-  友链 - 友情链接: https://friend.dolyw.com
-  音乐 - 我的音乐台: https://res.dolyw.com
   视频 - 我的视频: https://lis.dolyw.com
-  书签 - 我的书签: https://mark.dolyw.com
+  时间 - 时间沙漏: https://time.dolyw.com
   联系 - 我的简历: https://cv.dolyw.com
-  时间 - 当前时间: https://time.dolyw.com
-  关于 - 关于本站: https://me.dolyw.com
+  OnePiece - 海贼小站: https://one.dolyw.com
+  Mikutap - 好玩的音符: https://mikutap.dolyw.com
+  特效 - 收藏的一些特效: https://text.dolyw.com
 
 aboutme: 很懒<br><br>有时间就写一下
