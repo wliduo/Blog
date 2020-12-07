@@ -23,3 +23,5 @@ date: 2020-11-03
 <img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@master/2020/11/20201104015.jpg" data-action="zoom" title="LOL手游">
 
 <img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@master/2020/11/20201104020.jpg" data-action="zoom" title="LOL手游">
+
+12 月 7 号台服上线了，有繁体中文了

@@ -3,6 +3,7 @@
 menu:
   主页: /
   相册: /photos/
+  # 图片: /web/
   # 关于: /about/
 
 # SubNav
@@ -133,6 +134,8 @@ friends:
   联系 - 我的简历: https://cv.dolyw.com
   OnePiece - 海贼小站: https://one.dolyw.com
   Mikutap - 好玩的音符: https://mikutap.dolyw.com
+  字符 - 图片转字符: https://char.dolyw.com/pic.html
+  字符 - 视频转字符: https://char.dolyw.com/video.html
   特效 - 收藏的一些特效: https://text.dolyw.com
 
 aboutme: 很懒<br><br>有时间就写一下
