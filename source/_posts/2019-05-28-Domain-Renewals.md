@@ -20,6 +20,6 @@ photos:
 <!-- ![图片](https://dolyw.gitee.io/reader/Image/Docs/20190529/20190529201211.jpg) -->
 <!-- ![图片](https://res.dolyw.com/Image/Docs/20190529/20190529201211.jpg) -->
 
-<!-- ![图片](https://cdn.jsdelivr.net/gh/wliduo/CDN@master/2019/05/20190529201158.jpg) -->
+<!-- ![图片](https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2019/05/20190529201158.jpg) -->
 
-<img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@master/2019/05/20190529201158.jpg" data-action="zoom">
+<img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2019/05/20190529201158.jpg" data-action="zoom">

@@ -70,7 +70,7 @@ google_analytics: ''
 favicon: https://cdn.jsdelivr.net/gh/wliduo/Index@master/static/favicon.ico
 
 #你的头像url
-avatar: https://cdn.jsdelivr.net/gh/wliduo/CDN@master/avatar/01_thn.png
+avatar: https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/avatar/01_thn.png
 
 #是否开启分享
 share_jia: false

@@ -18,4 +18,4 @@ date: 2020-06-27
 
 这个端午太无聊，结果把杨紫的两部剧，亲爱的热爱的的和香蜜给刷了，之前看热播收视不错，应该还能看，亲爱的热爱的感觉有点像全职高手一样，香蜜也还行吧，快进型，亲爱的热爱的一天搞定了，香蜜太长，刷了两天，这个端午就这样，废了，明天又上班了，希望疫情早点过去吧，我还想回深圳呢，估计控制的好的话，也是一两个月的事<!-- ，下面是刚来北京的时候飞机上拍的景色 -->
 
-<img style="width:100%;max-width:400px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@master/Camera/2020/IMG_20200602_114944.jpg" data-action="zoom" title="20200602_114944 - 这个夏天，北京之行，飞机上">
+<img style="width:100%;max-width:400px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/Camera/2020/IMG_20200602_114944.jpg" data-action="zoom" title="20200602_114944 - 这个夏天，北京之行，飞机上">
