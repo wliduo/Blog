@@ -8,7 +8,7 @@ date: 2020-11-03
 <div id="dplayer-2020-11-03"></div>
 
 <style>#dplayer-2020-11-03{max-width: 666px;}</style>
-<script>$(function(){var dp = new DPlayer({container: document.getElementById('dplayer-2020-11-03'),screenshot: false,video: {url:'https://cdnv.dolyw.com/LOL-Mobile-Game.mp4',pic:'https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2020/11/20201104005.jpg'}});})</script>
+<script>$(function(){var dp = new DPlayer({container: document.getElementById('dplayer-2020-11-03'),screenshot: false,video: {url:'https://cdnv.dolyw.com/LOL-Mobile-Game.mp4',pic:'https://cdn.dolyw.com/2020/11/20201104005.jpg'}});})</script>
 
 ---
 
@@ -16,12 +16,12 @@ date: 2020-11-03
 
 腾讯 3 天用完了，又换贴吧推荐的海豚加速器和 biubiu 加速器，biubiu 免费的，但是还是有时候卡顿，海豚更稳，一开始免费的，后来取消了，但是也比腾讯便宜，4 个月 22 快，平均 5.5 一个月把，已购买
 
-<!-- <img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2020/11/20201104005.jpg" data-action="zoom" title="LOL手游"> -->
+<!-- <img style="width:100%;max-width:666px" src="https://cdn.dolyw.com/2020/11/20201104005.jpg" data-action="zoom" title="LOL手游"> -->
 
-<img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2020/11/20201104010.jpg" data-action="zoom" title="LOL手游">
+<img style="width:100%;max-width:666px" src="https://cdn.dolyw.com/2020/11/20201104010.jpg" data-action="zoom" title="LOL手游">
 
-<img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2020/11/20201104015.jpg" data-action="zoom" title="LOL手游">
+<img style="width:100%;max-width:666px" src="https://cdn.dolyw.com/2020/11/20201104015.jpg" data-action="zoom" title="LOL手游">
 
-<img style="width:100%;max-width:666px" src="https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/2020/11/20201104020.jpg" data-action="zoom" title="LOL手游">
+<img style="width:100%;max-width:666px" src="https://cdn.dolyw.com/2020/11/20201104020.jpg" data-action="zoom" title="LOL手游">
 
 12 月 7 号台服上线了，有繁体中文了
