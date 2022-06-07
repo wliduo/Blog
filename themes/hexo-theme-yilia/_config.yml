@@ -67,10 +67,10 @@ top: true
 # Miscellaneous
 baidu_analytics: '2beae01f64653b00b6689fce672e9a08'
 google_analytics: ''
-favicon: https://cdn.jsdelivr.net/gh/wliduo/Index@master/static/favicon.ico
+favicon: https://dolyw.com/static/favicon.ico
 
 #你的头像url
-avatar: https://cdn.jsdelivr.net/gh/wliduo/CDN@1.1/avatar/01_thn.png
+avatar: https://cdn.dolyw.com/avatar/01_thn.png
 
 #是否开启分享
 share_jia: false
